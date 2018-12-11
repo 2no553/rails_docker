@@ -56,6 +56,9 @@ group :development do
   gem 'pry-rails'
   gem 'hirb'
   gem 'hirb-unicode'
+
+  # Add static code analyzer
+  gem 'rubocop'
 end
 
 group :test do
