@@ -62,7 +62,7 @@ group :development do
   gem 'hirb-unicode'
 
   # Add static code analyzer gems
-  gem 'rubocop'
+  gem "rubocop", ">= 0.49.0"
 
   # Add test gems
   gem 'spring-commands-rspec'
