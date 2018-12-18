@@ -62,8 +62,7 @@ group :development do
   gem 'hirb-unicode'
 
   # Add static code analyzer gems
-  gem "rubocop"
-  gem 'unicode-display_width'
+  gem 'rubocop'
 
   # Add test gems
   gem 'spring-commands-rspec'
