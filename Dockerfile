@@ -16,7 +16,6 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
-# puma.sockを配置するディレクトリを作成
 RUN mkdir -p tmp/sockets
 
 # Start the main process.
