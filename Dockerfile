@@ -10,14 +10,13 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 COPY . /myapp
 
-# puma.sockを配置するディレクトリを作成
-RUN mkdir -p tmp/sockets
-
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
+RUN mkdir -p tmp/sockets
+
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "puma"]
