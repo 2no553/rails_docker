@@ -1,24 +1,50 @@
-# README
+## Version
+```
+- Docker version 18.09.2
+- docker-compose version 1.23.2
+- ruby 2.5.3
+- Rails 5.2.2
+- mysql  Ver 8.0.15
+- nginx version: nginx/1.15.9
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Directory
+```
+.
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── app
+├── bin
+├── config
+├── config.ru
+├── db
+├── docker
+├── docker-compose.yml
+├── lib
+├── log
+├── package.json
+├── public
+├── puma_shared
+├── setting_sample
+├── storage
+├── test
+├── tmp
+└── vendor
+```
 
-Things you may want to cover:
+### Start
+```
+git clone https://github.com/2no553/rails_docker.git
+docker-compose up -d --build
+docker-compose run --rm app rake db:create
+```
 
-* Ruby version
+### Reference
+- [Quickstart: Compose and Rails | Docker Documentation](https://docs.docker.com/compose/rails/)
+- [Docker + Rails + Puma + Nginx + MySQL - Qiita](https://qiita.com/eighty8/items/0288ab9c127ddb683315)
+- [an example of puma and ngxin with ruby on rails config.md](https://gist.github.com/duleorlovic/762c4ffdf43c8eb31aa7)
+- [puma/config.rb at e0f544d0ec5769c05e439ba251b5685cb546fed5 · puma/puma](https://github.com/puma/puma/blob/e0f544d0ec5769c05e439ba251b5685cb546fed5/examples/config.rb)
+- [puma/nginx.md at master · puma/puma](https://github.com/puma/puma/blob/master/docs/nginx.md)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
