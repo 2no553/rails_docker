@@ -4,7 +4,7 @@ port        ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 plugin :tmp_restart
 
-app_dir = "/myapp"
+app_dir = "/srv"
 shared_dir = "/puma_shared"
 bind "unix://#{app_dir}#{shared_dir}/sockets/puma.sock"
 stdout_redirect "#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true

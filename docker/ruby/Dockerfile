@@ -2,13 +2,13 @@ FROM ruby:2.5.3
 
 RUN apt-get update -qq && apt-get install -y build-essential nodejs
 
-RUN mkdir /myapp
-WORKDIR /myapp
+#RUN mkdir /myapp
+WORKDIR /srv
 
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+COPY Gemfile /srv/Gemfile
+COPY Gemfile.lock /srv/Gemfile.lock
 RUN bundle install
-RUN . /myapp
+RUN . /srv
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
