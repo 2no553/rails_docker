@@ -17,9 +17,8 @@ services:
     volumes:
       - .:/myapp
       - bundle:/usr/local/bundle
+      - puma_shared:/myapp/puma_shared
       - public_data:/myapp/public
-      - tmp_data:/myapp/tmp
-      - log_data:/myapp/log
     ports:
       - "${RAILS_PORT}:3000"
     depends_on:
@@ -30,8 +29,8 @@ services:
     env_file:
       - .env
     volumes:
+      - puma_shared:/myapp/puma_shared
       - public_data:/myapp/public
-      - tmp_data:/myapp/tmp
     ports:
       - "${NGINX_HOST_HTTP_PORT}:80"
       - "${NGINX_HOST_HTTPS_PORT}:443"
@@ -40,6 +39,5 @@ services:
 
 volumes:
   bundle: {}
+  puma_shared: {}
   public_data: {}
-  tmp_data: {}
-  log_data: {}

@@ -16,8 +16,9 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
-RUN mkdir -p tmp/sockets
-
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
-#CMD ["bundle", "exec", "puma"]
+#CMD ["rails", "server", "-b", "0.0.0.0"]
+
+# Start puma
+RUN mkdir -p puma_shared/sockets
+CMD ["bundle", "exec", "puma"]
