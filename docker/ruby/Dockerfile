@@ -7,8 +7,10 @@ WORKDIR /myapp
 
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
+COPY database.yml /myapp/config/database.yml
+COPY puma.rb /myapp/config/puma.rb
 RUN bundle install
-COPY . /myapp
+#COPY . /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/

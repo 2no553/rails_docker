@@ -11,7 +11,7 @@ services:
     user: "1000:50"
 
   app:
-    build: .
+    build: ./docker/ruby
     env_file:
       - .env
     volumes:
