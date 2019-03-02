@@ -7,10 +7,8 @@ WORKDIR /myapp
 
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-COPY database.yml /myapp/config/database.yml
-COPY puma.rb /myapp/config/puma.rb
 RUN bundle install
-#COPY . /myapp
+RUN . /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
@@ -21,4 +19,5 @@ EXPOSE 3000
 RUN mkdir -p tmp/sockets
 
 # Start the main process.
-CMD ["bundle", "exec", "puma"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
+#CMD ["bundle", "exec", "puma"]
