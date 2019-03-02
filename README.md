@@ -37,6 +37,7 @@
 ### Start
 ```
 git clone https://github.com/2no553/rails_docker.git
+cd rails_docker/
 docker-compose up -d --build
 docker-compose run --rm app rake db:create
 ```
