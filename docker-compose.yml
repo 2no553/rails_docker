@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    build: ./mysql
+    build: ./docker/mysql
     env_file:
       - .env
     volumes:
@@ -11,7 +11,7 @@ services:
     user: "1000:50"
 
   app:
-    build: .
+    build: ./docker/ruby
     env_file:
       - .env
     volumes:
@@ -26,7 +26,7 @@ services:
       - db
 
   web:
-    build: ./nginx
+    build: ./docker/nginx
     env_file:
       - .env
     volumes:

@@ -1,32 +1,24 @@
-## Version
-- mysql  Ver 8.0.15 for Linux on x86_64 (MySQL Community Server - GPL)
-- ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
-- Rails 5.2.2
+# README
 
-## Directory
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-``` 
-.
-├── Dockerfile
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── Rakefile
-├── app
-├── bin
-├── config
-├── config.ru
-├── db
-├── docker
-├── docker-compose.yml
-├── entrypoint.sh
-├── lib
-├── log
-├── mysql
-├── package.json
-├── public
-├── spec
-├── test
-├── tmp
-└── vendor
-```
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
