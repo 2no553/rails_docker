@@ -19,5 +19,5 @@ EXPOSE 3000
 #CMD ["rails", "server", "-b", "0.0.0.0"]
 
 # Start puma
-RUN mkdir -p puma_shared/sockets
+RUN mkdir -p /puma_shared/sockets
 CMD ["bundle", "exec", "puma"]
