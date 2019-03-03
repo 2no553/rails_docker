@@ -11,27 +11,12 @@
 ## Directory
 ```
 .
-├── Gemfile
-├── Gemfile.lock
 ├── README.md
-├── Rakefile
-├── app
-├── bin
-├── config
-├── config.ru
-├── db
+├── db_data
 ├── docker
 ├── docker-compose.yml
-├── lib
-├── log
-├── package.json
-├── public
-├── puma_shared
-├── setting_sample
-├── storage
-├── test
-├── tmp
-└── vendor
+├── myapp
+└── setting_sample
 ```
 
 ### Start
