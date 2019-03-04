@@ -12,10 +12,12 @@ services:
 
   app:
     build: ./docker/ruby
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma"
     env_file:
       - .env
+    working_dir: ${APP_CODE_PATH_CONTAINER}
     volumes:
-      - ${APP_CODE_PATH_HOST}:/srv
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       - bundle:/usr/local/bundle
       - puma_shared:/puma_shared
     ports:
@@ -28,7 +30,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ${APP_CODE_PATH_HOST}:/srv
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       - puma_shared:/puma_shared
     ports:
       - "${NGINX_HOST_HTTP_PORT}:80"
