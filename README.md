@@ -14,17 +14,40 @@
 ├── README.md
 ├── db_data
 ├── docker
+│   ├── mysql
+│   ├── nginx
+│   └── ruby
 ├── docker-compose.yml
 ├── myapp
+│   ├── Gemfile
+│   ├── Gemfile.lock
+│   ├── Rakefile
+│   ├── app
+│   ├── bin
+│   ├── config
+│   ├── config.ru
+│   ├── db
+│   ├── lib
+│   ├── log
+│   ├── package.json
+│   ├── public
+│   ├── storage
+│   ├── test
+│   ├── tmp
+│   └── vendor
 └── setting_sample
+    ├── database.yml
+    └── puma.rb
 ```
 
 ### Start
 ```
 git clone https://github.com/2no553/rails_docker.git
 cd rails_docker/
-docker-compose up -d --build
+docker-compose build
+docker-compose run --rm app bundle install
 docker-compose run --rm app rake db:create
+docker-compose up -d
 ```
 
 ### Reference
