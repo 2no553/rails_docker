@@ -12,6 +12,7 @@ services:
 
   app:
     build: ./docker/ruby
+    #command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma"
     env_file:
       - .env
